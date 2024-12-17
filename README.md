@@ -9,6 +9,8 @@
     </a>
     <br/>
 </p>
+
+
 Code for paper [Learning from Massive Human Videos for Universal Humanoid Pose Control]().
 Please refer to our [project page](https://usc-gvl.github.io/UH-1/) for more demonstrations and up-to-date related resources. 
 
