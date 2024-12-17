@@ -12,6 +12,9 @@
 <div align="center">
 <img src="./assets/teaser.png" ></img> 
 </div>
+<h5 align="center">
+    <a href="https://usc-gvl.github.io/UH-1/">🌐 Homepage</a> | <a href="https://huggingface.co/datasets/USC-GVL/Humanoid-X">⛁ Dataset</a> | <a href="https://huggingface.co/datasets/USC-GVL/UH-1">🤗 Models</a> | <a href="">📑 Paper</a> | <a href="https://github.com/sihengz02/UH-1">💻 Code</a>
+</h5>
 
 Code for paper [Learning from Massive Human Videos for Universal Humanoid Pose Control](). Please refer to our [project page](https://usc-gvl.github.io/UH-1/) for more demonstrations and up-to-date related resources. 
 
