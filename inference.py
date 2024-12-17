@@ -6,8 +6,7 @@ import models.transformer as trans
 import option
 
 prompt_list = ["Play Violin"] # TODO
-root_path = "/path/to/UH-1" # TODO: change the path to UH-1
-root_path = "/data/zhaosh/huggingface"
+root_path = "/path/to/UH-1" # TODO
 
 args = option.get_args_parser()
 args.resume_tokenizer = f"{root_path}/UH-1/UH1_Action_Tokenizer.pth"

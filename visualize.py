@@ -17,7 +17,7 @@ DOF_POS = np.array([
 ])
 
 FILE_PATH = "output"
-file_list = ["Play_Violin.npy"]
+file_list = ["Play_Violin.npy"] # TODO
 file_motions_list = []
 for file_name in file_list:
     file_motions_list.append(np.load(f"{FILE_PATH}/{file_name}"))
