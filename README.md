@@ -105,11 +105,11 @@ cd legged_gym/legged_gym/scripts
 python train.py xxx-xx-run_name --task h1_2_mimic --device cuda:0
 ```
 
-### 
+
 
 ## Humanoid-X Data Collection
 
-For motion retargetting, please refer to this [README](https://github.com/sihengz02/UH-1/blob/main/README-Humanoid-X.md).
+For the data collection pipeline, including **Video Clip Extraction**, **3D Human Pose Estimation**, **Video Captioning**, and **Motion Retargetting**, please refer to this [README](https://github.com/sihengz02/UH-1/blob/main/README-Humanoid-X.md).
 
 
 

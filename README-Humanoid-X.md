@@ -1,6 +1,8 @@
-# Motion Retargeting
+# Humanoid-X Data Collection
 
-## Dependencies
+## Motion Retargeting
+
+### Dependencies
 
 To establish the environment while dealing with digital human models such as SMPL and SMPL-X, we need to create a new environment
 ```bash
@@ -41,9 +43,7 @@ retarget/
 *other files and folders in the repo*
 ```
 
-
-
-## Usage
+### Usage
 
 The first step to the retargeting process is to optimize for the best `betas` param of the SMPL-X model to better reshape the human model to the humanoid pose. This process is done in the `optim_betas_smplx.py`. In this file, the default pose of the humanoid robot can be set by setting the default dof pose. The range of the `betas` param can be set to avoid over deforming of the humanoid robot. The optimized `betas` param will be exported into a new file.
 
@@ -72,3 +72,33 @@ retarget_motion_smplx.py
 betas_param/betas_param_r5_smplx.npy
 betas_param/betas_param_r5_smpl.npy
 ```
+
+
+
+## Video Clip Extraction
+
+Work in progress ...
+
+
+
+## 3D Human Pose Estimation
+
+Work in progress. You can refer to these codebases:
+
+- VIBE: https://github.com/mkocabas/VIBE
+- 4DHumans: https://github.com/shubham-goel/4D-Humans
+
+
+
+## Video Captioning
+
+Work in progress. You can refer to these codebases:
+
+- Video-LLaMA: https://github.com/DAMO-NLP-SG/Video-LLaMA
+- VideoLLaMA 2: https://github.com/DAMO-NLP-SG/VideoLLaMA2
+
+
+
+## Goal-conditioned Reinforcement Learning
+
+Please refer to this [README](https://github.com/sihengz02/UH-1?tab=readme-ov-file#goal-conditioned-humanoid-control-policy).
