@@ -117,14 +117,12 @@ def play(args):
     print(f"Loading model from: {load_path}")
     ac_state_dict = torch.load(load_path, map_location=device)
     policy.load_state_dict(ac_state_dict['model_state_dict'], strict=False)
-    # policy.actor.load_state_dict(ac_state_dict['depth_actor_state_dict'], strict=True)
+
     policy.estimator.load_state_dict(ac_state_dict['estimator_state_dict'], strict=True)
     
     policy = policy.to(device)#.cpu()
     if not os.path.exists(os.path.join(load_run, "traced")):
         os.mkdir(os.path.join(load_run, "traced"))
-    # state_dict = {'depth_encoder_state_dict': ac_state_dict['depth_encoder_state_dict']}
-    # torch.save(state_dict, os.path.join(load_run, "traced", args.exptid + "-" + str(checkpoint) + "-vision_weight.pt"))
 
     # Save the traced actor
     policy.eval()
@@ -133,12 +131,9 @@ def play(args):
         
         obs_input = torch.ones(num_envs, n_proprio + num_demo + num_scan + n_priv_explicit + history_len*n_proprio, device=device)
         print("obs_input shape: ", obs_input.shape)
-        # depth_latent = torch.ones(1, 32, device=device)
-        # test = policy(obs_input, depth_latent)
         
         traced_policy = torch.jit.trace(policy, obs_input)
-        
-        # traced_policy = torch.jit.script(policy)
+
         save_path = os.path.join(load_run, "traced", args.exptid + "-" + str(checkpoint) + "-base_jit.pt")
         traced_policy.save(save_path)
         print("Saved traced_actor at ", os.path.abspath(save_path))
@@ -151,4 +146,3 @@ if __name__ == '__main__':
     parser.add_argument('--tanh', action='store_true')
     args = parser.parse_args()
     play(args)
-    

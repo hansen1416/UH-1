@@ -20,8 +20,10 @@ Code for paper [Learning from Massive Human Videos for Universal Humanoid Pose C
 
 
 
+## UH-1 Model 
 
-## Dependencies
+### Dependencies
+
 To establish the environment, run this code in the shell:
 ```shell
 conda create -n UH-1 python=3.8.11
@@ -29,10 +31,6 @@ conda activate UH-1
 pip install git+https://github.com/openai/CLIP.git
 pip install mujoco opencv-python
 ```
-
-
-
-## Usage
 
 ### Preparation
 
@@ -62,6 +60,56 @@ python inference.py
 ```bash
 mjpython visualize.py
 ```
+
+
+
+## Goal-conditioned Humanoid Control Policy
+
+### Dependencies
+
+To set up the conda environment for Isaac Gym while avoiding dependency conflicts, we chose to create a new environment.
+
+```bash
+conda create -n UH-1-rl python=3.8
+conda activate UH-1-rl
+pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1+cu117 -f https://download.pytorch.org/whl/torch_stable.html
+pip install oauthlib==3.2.2 protobuf==5.28.1
+
+# Download the Isaac Gym binaries from https://developer.nvidia.com/isaac-gym 
+cd isaacgym/python && pip install -e .
+
+# then make sure you are at the root folder of this project 
+cd rsl_rl && pip install -e .
+cd ../legged_gym && pip install -e .
+
+pip install "torch==1.13.1" "numpy==1.23.0" pydelatin==0.2.8 wandb==0.17.5 tqdm opencv-python==4.10.0.84 ipdb pyfqmr==0.2.1 flask dill==0.3.8 gdown==5.2.0 pytorch_kinematics==0.7.4 easydict==1.13
+```
+
+### Inference
+
+To play the policy with the checkpoint we've provided, try
+
+```bash
+# make sure you are at the root folder of this project 
+cd legged_gym/legged_gym/scripts
+python play.py 000-00 --task h1_2_mimic --device cuda:0
+```
+
+### Train from scratch
+
+To train the goal-conditioned RL policy from scratch, try
+
+```bash
+# make sure you are at the root folder of this project 
+cd legged_gym/legged_gym/scripts
+python train.py xxx-xx-run_name --task h1_2_mimic --device cuda:0
+```
+
+### 
+
+## Humanoid-X Data Collection
+
+For motion retargetting, please refer to this [README](https://github.com/sihengz02/UH-1/blob/main/README-Humanoid-X.md).
 
 
 
