@@ -4,8 +4,8 @@
     <a href="https://img.shields.io/badge/PRs-Welcome-red">
         <img src="https://img.shields.io/badge/PRs-Welcome-red">
     </a>
-    <a href="https://img.shields.io/github/last-commit/xlang-ai/text2reward?color=green">
-        <img src="https://img.shields.io/github/last-commit/xlang-ai/text2reward?color=green">
+    <a href="https://img.shields.io/github/last-commit/sihengz02/UH-1?color=green">
+        <img src="https://img.shields.io/github/last-commit/sihengz02/UH-1?color=green">
     </a>
     <br/>
 </p>
