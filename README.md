@@ -85,6 +85,9 @@ cd ../legged_gym && pip install -e .
 pip install "torch==1.13.1" "numpy==1.23.0" pydelatin==0.2.8 wandb==0.17.5 tqdm opencv-python==4.10.0.84 ipdb pyfqmr==0.2.1 flask dill==0.3.8 gdown==5.2.0 pytorch_kinematics==0.7.4 easydict==1.13
 ```
 
+Here is a sample of our training data. Due to the file size limit of Github, the data file can be downloaded [here](https://drive.google.com/drive/folders/1v6G6GsZZ41hg1CsUB6meU8QIDwqsDbN6?usp=sharing). 
+Please put the data file at `motion_lib/motion_pkl/motion_data_cmu_sample.pkl`
+
 ### Inference
 
 To play the policy with the checkpoint we've provided, try
