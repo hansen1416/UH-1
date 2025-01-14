@@ -34,7 +34,7 @@ pip install mujoco opencv-python
 
 ### Preparation
 
-Download our model checkpoints from [here](https://huggingface.co/USC-GVL/UH-1).
+Download our **text-to-keypoint** model checkpoints from [here](https://huggingface.co/USC-GVL/UH-1).
 
 ```bash
 git lfs install
@@ -42,6 +42,8 @@ git clone https://huggingface.co/USC-GVL/UH-1
 ```
 
 ### Inference
+
+For **text-to-keypoint** generation,
 
 - Change the `root_path` in `inference.py` to the path of the checkpoints you just downloaded.
 - Change the `prompt_list` in `inference.py` to the language prompt you what the model to generate.
@@ -52,7 +54,11 @@ git clone https://huggingface.co/USC-GVL/UH-1
 python inference.py
 ```
 
+The generated keypoint is in this shape: `[number of frames, 34-dim keypoint]`, where the `34-dim keypoint = 27-dim DoFs joint pose value + 3-dim root position + 4-dim root orientation`.
+
 ### Visualize
+
+Visualize these keypoints by directly setting DoFs pose,
 
 - Change the `file_list` in `visualize.py` to the generated humaoid motion file names.
 - Run the following commands, and the rendered video will be stored in the `output` folder.
@@ -60,7 +66,7 @@ python inference.py
 ```bash
 mjpython visualize.py
 ```
-
+If you want to do close-loop control conditioned on the generated humanoid keypoints, you need to use the goal-conditioned humanoid control policy provided below.
 
 
 ## Goal-conditioned Humanoid Control Policy
