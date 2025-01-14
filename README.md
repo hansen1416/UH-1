@@ -20,7 +20,7 @@ Code for paper [Learning from Massive Human Videos for Universal Humanoid Pose C
 
 
 
-## UH-1 Model 
+## UH-1 Model: Language-conditioned Humanoid Control
 
 ### Dependencies
 
