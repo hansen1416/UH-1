@@ -43,6 +43,8 @@ retarget/
 *other files and folders in the repo*
 ```
 
+You may refer to [this repo](https://github.com/song-siqi/retarget2humanoid) for more information about the implementation of the retargeting process, which besides includes the code for retargeting on Unitree G1 robot.
+
 ### Usage
 
 The first step to the retargeting process is to optimize for the best `betas` param of the SMPL-X model to better reshape the human model to the humanoid pose. This process is done in the `optim_betas_smplx.py`. In this file, the default pose of the humanoid robot can be set by setting the default dof pose. The range of the `betas` param can be set to avoid over deforming of the humanoid robot. The optimized `betas` param will be exported into a new file.
