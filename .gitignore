@@ -130,3 +130,6 @@ dmypy.json
 
 .vscode
 .DS_Store
+
+isaacgym
+motion_data_cmu_sample.pkl
