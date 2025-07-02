@@ -6,7 +6,7 @@ import models.tokenizer as tokenizer
 import models.transformer as trans
 import option
 
-prompt_list = ["Play Violin"]  # TODO
+prompt_list = ["Jogging"]  # TODO
 root_path = os.path.join(os.path.expanduser("~"), "checkpoints")
 
 args = option.get_args_parser()
