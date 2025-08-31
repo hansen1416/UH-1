@@ -6,10 +6,14 @@ import models.tokenizer as tokenizer
 import models.transformer as trans
 import option
 
-prompt_list = ["Jogging"]  # TODO
+args = option.get_args_parser()
+
+print(f"Generating motion for description: '{args.prompt}'")
+
+prompt_list = [args.prompt]  # TODO
 root_path = os.path.join(os.path.expanduser("~"), "checkpoints")
 
-args = option.get_args_parser()
+
 args.resume_tokenizer = f"{root_path}/UH-1/UH1_Action_Tokenizer.pth"
 args.resume_trans = f"{root_path}/UH-1/UH1_Transformer.pth"
 mean = torch.from_numpy(np.load(f"{root_path}/UH-1/Mean.npy")).cuda()

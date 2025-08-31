@@ -134,5 +134,6 @@ dmypy.json
 isaacgym
 motion_data_cmu_sample.pkl
 output
+output_video
 
 MUJOCO_LOG.TXT

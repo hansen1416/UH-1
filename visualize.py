@@ -41,7 +41,11 @@ DOF_POS = np.array(
 )
 
 FILE_PATH = "output"
-file_list = ["Jogging.npy"]  # TODO
+VIDEO_PATH = "output_video"
+# file_list = ["Jogging.npy"]  # TODO
+# collect all .npy files
+file_list = [f for f in os.listdir(FILE_PATH) if f.endswith(".npy")]
+
 file_motions_list = []
 for file_name in file_list:
     file_motions_list.append(np.load(f"{FILE_PATH}/{file_name}"))
@@ -93,7 +97,7 @@ if __name__ == "__main__":
 
             frame_height, frame_width, _ = frames[0].shape
             fps = 30  # Frames per second
-            output_file = f"{FILE_PATH}/{file_name[:-4]}{i}.mp4"
+            output_file = f"{VIDEO_PATH}/{file_name[:-4]}{i}.mp4"
 
             # Create a VideoWriter object
             fourcc = cv2.VideoWriter_fourcc(
